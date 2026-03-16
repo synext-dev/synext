@@ -7,6 +7,8 @@ import type {
   UpcomingSession,
   ActivityItem,
   MonthlyRevenuePoint,
+  MonthlySpendingPoint,
+  UpcomingTraining,
 } from "@/types";
 
 export const trainers: Trainer[] = [
@@ -341,10 +343,124 @@ export const trainerDashboardKPIs: TrainerDashboardKPIs = {
   recentActivity,
 };
 
+const orgMonthlySpendingData: MonthlySpendingPoint[] = [
+  { month: "Jan", spending: 8500, previousYear: 7200 },
+  { month: "Fév", spending: 12000, previousYear: 9800 },
+  { month: "Mar", spending: 9800, previousYear: 8500 },
+  { month: "Avr", spending: 11200, previousYear: 9200 },
+  { month: "Mai", spending: 10500, previousYear: 8800 },
+  { month: "Jun", spending: 14200, previousYear: 11500 },
+  { month: "Jul", spending: 13100, previousYear: 10200 },
+  { month: "Aoû", spending: 9800, previousYear: 7600 },
+  { month: "Sep", spending: 11500, previousYear: 9900 },
+  { month: "Oct", spending: 12800, previousYear: 10800 },
+  { month: "Nov", spending: 10200, previousYear: 9100 },
+  { month: "Déc", spending: 14800, previousYear: 12400 },
+];
+
+const orgUpcomingTrainings: UpcomingTraining[] = [
+  {
+    id: "ot1",
+    courseTitle: "React Avancé — Patterns et Performance",
+    trainerName: "Sophie Martin",
+    date: "2026-03-24",
+    startTime: "09:00",
+    endTime: "17:00",
+    location: "Paris",
+    type: "ONSITE",
+    employeeCount: 8,
+  },
+  {
+    id: "ot2",
+    courseTitle: "Machine Learning pour les entreprises",
+    trainerName: "Marc Dubois",
+    date: "2026-03-31",
+    startTime: "09:30",
+    endTime: "17:30",
+    location: "En ligne",
+    type: "REMOTE",
+    employeeCount: 12,
+  },
+  {
+    id: "ot3",
+    courseTitle: "Kubernetes en production",
+    trainerName: "Thomas Leroy",
+    date: "2026-04-07",
+    startTime: "09:00",
+    endTime: "17:00",
+    location: "Paris",
+    type: "ONSITE",
+    employeeCount: 6,
+  },
+  {
+    id: "ot4",
+    courseTitle: "Leadership agile pour managers",
+    trainerName: "Julien Moreau",
+    date: "2026-04-14",
+    startTime: "10:00",
+    endTime: "18:00",
+    location: "En ligne",
+    type: "REMOTE",
+    employeeCount: 15,
+  },
+];
+
+const orgRecentActivity: ActivityItem[] = [
+  {
+    id: "oa1",
+    type: "TRAINER_HIRED",
+    message: "Sophie Martin a accepté la mission React Avancé",
+    timestamp: "2026-03-16T15:00:00",
+  },
+  {
+    id: "oa2",
+    type: "TRAINING_COMPLETED",
+    message: "Formation SEO technique terminée — 12 employés certifiés",
+    timestamp: "2026-03-15T17:00:00",
+  },
+  {
+    id: "oa3",
+    type: "PAYMENT",
+    message: "Facture de 4 450 \u20AC réglée pour Machine Learning",
+    timestamp: "2026-03-15T10:30:00",
+  },
+  {
+    id: "oa4",
+    type: "ENROLLMENT",
+    message: "5 employés inscrits à Kubernetes en production",
+    timestamp: "2026-03-14T14:20:00",
+  },
+  {
+    id: "oa5",
+    type: "TRAINER_HIRED",
+    message: "Thomas Leroy a accepté la mission Kubernetes",
+    timestamp: "2026-03-13T11:45:00",
+  },
+  {
+    id: "oa6",
+    type: "TRAINING_COMPLETED",
+    message: "Formation Design System terminée — 8 employés formés",
+    timestamp: "2026-03-12T17:00:00",
+  },
+  {
+    id: "oa7",
+    type: "PAYMENT",
+    message: "Facture de 7 800 \u20AC réglée pour Leadership agile",
+    timestamp: "2026-03-11T09:15:00",
+  },
+];
+
 export const organizationDashboardKPIs: OrganizationDashboardKPIs = {
   totalSpent: 128400,
   activeTrainers: 12,
   coursesCompleted: 34,
   employeesTrained: 186,
   monthlySpending: [8500, 12000, 9800, 11200, 10500, 14200, 13100, 9800, 11500, 12800, 10200, 14800],
+  spentTrend: 15.3,
+  trainersTrend: 9.1,
+  coursesTrend: 6.3,
+  employeesTrend: 12.8,
+  monthlySpendingData: orgMonthlySpendingData,
+  upcomingTrainings: orgUpcomingTrainings,
+  recentActivity: orgRecentActivity,
 };

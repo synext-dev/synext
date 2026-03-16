@@ -49,7 +49,7 @@ export interface Organization {
 
 export type SessionType = "ONSITE" | "REMOTE";
 
-export type ActivityType = "ENROLLMENT" | "REVIEW" | "PAYMENT" | "COURSE_PUBLISHED";
+export type ActivityType = "ENROLLMENT" | "REVIEW" | "PAYMENT" | "COURSE_PUBLISHED" | "TRAINING_COMPLETED" | "TRAINER_HIRED";
 
 export interface UpcomingSession {
   id: string;
@@ -90,12 +90,37 @@ export interface TrainerDashboardKPIs {
   recentActivity: ActivityItem[];
 }
 
+export interface MonthlySpendingPoint {
+  month: string;
+  spending: number;
+  previousYear: number;
+}
+
+export interface UpcomingTraining {
+  id: string;
+  courseTitle: string;
+  trainerName: string;
+  date: string;
+  startTime: string;
+  endTime: string;
+  location: string;
+  type: SessionType;
+  employeeCount: number;
+}
+
 export interface OrganizationDashboardKPIs {
   totalSpent: number;
   activeTrainers: number;
   coursesCompleted: number;
   employeesTrained: number;
   monthlySpending: number[];
+  spentTrend: number;
+  trainersTrend: number;
+  coursesTrend: number;
+  employeesTrend: number;
+  monthlySpendingData: MonthlySpendingPoint[];
+  upcomingTrainings: UpcomingTraining[];
+  recentActivity: ActivityItem[];
 }
 
 // --- Auth User ---

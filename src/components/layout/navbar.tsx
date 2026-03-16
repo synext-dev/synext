@@ -44,10 +44,10 @@ export async function Navbar() {
                 Espace formateur
               </Link>
               <Link
-                href="/register"
+                href="/dashboard/organization"
                 className="rounded-full bg-synext-light px-5 py-2.5 text-sm font-medium text-synext-navy transition-colors hover:bg-synext-blue hover:text-white"
               >
-                Inscription
+                Espace organisme
               </Link>
             </>
           )}

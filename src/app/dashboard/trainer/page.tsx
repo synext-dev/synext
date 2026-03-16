@@ -1,23 +1,26 @@
-import { Euro, BookOpen, Users, Star, MapPin, Monitor, UserPlus, CreditCard, CheckCircle } from "lucide-react";
+import { Euro, BookOpen, Users, Star, MapPin, Monitor, UserPlus, CreditCard, CheckCircle, GraduationCap } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { KPICard } from "@/components/dashboard/kpi-card";
 import { RevenueChart } from "@/components/dashboard/revenue-chart";
 import { getTrainerKPIs } from "@/lib/services/dashboard.service";
-import type { ActivityType } from "@/types";
 
-const ACTIVITY_ICONS: Record<ActivityType, typeof Star> = {
+const ACTIVITY_ICONS: Record<string, typeof Star> = {
   ENROLLMENT: UserPlus,
   REVIEW: Star,
   PAYMENT: CreditCard,
   COURSE_PUBLISHED: CheckCircle,
+  TRAINING_COMPLETED: GraduationCap,
+  TRAINER_HIRED: UserPlus,
 };
 
-const ACTIVITY_COLORS: Record<ActivityType, string> = {
+const ACTIVITY_COLORS: Record<string, string> = {
   ENROLLMENT: "bg-blue-50 text-blue-600",
   REVIEW: "bg-amber-50 text-amber-600",
   PAYMENT: "bg-green-50 text-green-600",
   COURSE_PUBLISHED: "bg-purple-50 text-purple-600",
+  TRAINING_COMPLETED: "bg-emerald-50 text-emerald-600",
+  TRAINER_HIRED: "bg-indigo-50 text-indigo-600",
 };
 
 function formatRelativeDate(timestamp: string): string {
