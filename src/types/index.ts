@@ -47,12 +47,47 @@ export interface Organization {
   employeeCount: number;
 }
 
+export type SessionType = "ONSITE" | "REMOTE";
+
+export type ActivityType = "ENROLLMENT" | "REVIEW" | "PAYMENT" | "COURSE_PUBLISHED";
+
+export interface UpcomingSession {
+  id: string;
+  courseTitle: string;
+  organizationName: string;
+  date: string;
+  startTime: string;
+  endTime: string;
+  location: string;
+  type: SessionType;
+}
+
+export interface ActivityItem {
+  id: string;
+  type: ActivityType;
+  message: string;
+  timestamp: string;
+}
+
+export interface MonthlyRevenuePoint {
+  month: string;
+  revenue: number;
+  previousYear: number;
+}
+
 export interface TrainerDashboardKPIs {
   totalRevenue: number;
   activeCourses: number;
   totalStudents: number;
   averageRating: number;
   monthlyRevenue: number[];
+  revenueTrend: number;
+  studentsTrend: number;
+  ratingTrend: number;
+  coursesTrend: number;
+  monthlyRevenueData: MonthlyRevenuePoint[];
+  upcomingSessions: UpcomingSession[];
+  recentActivity: ActivityItem[];
 }
 
 export interface OrganizationDashboardKPIs {

@@ -3,7 +3,9 @@ import { redirect } from "next/navigation";
 
 export default async function DashboardPage() {
   const session = await auth();
-  if (!session) redirect("/login");
+
+  // Phase 1: default to trainer dashboard if not authenticated
+  if (!session) redirect("/dashboard/trainer");
 
   switch (session.user.role) {
     case "TRAINER":
@@ -13,6 +15,6 @@ export default async function DashboardPage() {
     case "ADMIN":
       redirect("/dashboard/trainer");
     default:
-      redirect("/login");
+      redirect("/dashboard/trainer");
   }
 }

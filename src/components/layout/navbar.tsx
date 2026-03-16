@@ -9,22 +9,22 @@ export async function Navbar() {
 
   return (
     <header className="sticky top-4 z-50 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="flex items-center justify-between rounded-full bg-white px-6 py-3 shadow-[0px_4px_30px_0px_rgba(222,222,222,0.25)]">
-        <Link href="/" className="text-xl font-bold text-synext-navy">
+      <div className="flex items-center gap-8 rounded-full bg-white px-10 py-3.5 shadow-[0px_4px_30px_0px_rgba(222,222,222,0.25)]">
+        <Link href="/" className="shrink-0 font-heading text-xl font-bold text-synext-navy">
           {APP_NAME}
         </Link>
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden flex-1 items-center justify-center gap-6 lg:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-foreground transition-colors hover:text-synext-blue"
+              className="whitespace-nowrap text-sm text-foreground transition-colors hover:text-synext-blue"
             >
               {link.label}
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-3">
           {session?.user ? (
             <UserMenu
               user={{
@@ -38,14 +38,14 @@ export async function Navbar() {
           ) : (
             <>
               <Link
-                href="/login"
-                className="rounded-full border-[1.5px] border-synext-navy px-4 py-2 text-sm font-medium text-synext-navy transition-colors hover:bg-synext-navy hover:text-white"
+                href="/dashboard/trainer"
+                className="rounded-full border-[1.5px] border-synext-navy px-5 py-2.5 text-sm font-medium text-synext-navy transition-colors hover:bg-synext-navy hover:text-white"
               >
-                Offres
+                Espace formateur
               </Link>
               <Link
                 href="/register"
-                className="rounded-full bg-synext-light px-4 py-2 text-sm font-medium text-synext-navy transition-colors hover:bg-synext-blue hover:text-white"
+                className="rounded-full bg-synext-light px-5 py-2.5 text-sm font-medium text-synext-navy transition-colors hover:bg-synext-blue hover:text-white"
               >
                 Inscription
               </Link>

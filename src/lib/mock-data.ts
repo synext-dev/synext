@@ -4,6 +4,9 @@ import type {
   Organization,
   TrainerDashboardKPIs,
   OrganizationDashboardKPIs,
+  UpcomingSession,
+  ActivityItem,
+  MonthlyRevenuePoint,
 } from "@/types";
 
 export const trainers: Trainer[] = [
@@ -160,6 +163,34 @@ export const courses: Course[] = [
     enrollmentCount: 203,
     image: "/placeholder-course.png",
   },
+  {
+    id: "c7",
+    title: "Next.js 16 — Server Components et App Router",
+    description:
+      "Découvrez les dernières fonctionnalités de Next.js : Server Components, streaming, server actions et déploiement edge.",
+    price: 950,
+    duration: "3 jours",
+    category: "DEVELOPMENT",
+    status: "DRAFT",
+    trainerId: "t1",
+    trainerName: "Sophie Martin",
+    enrollmentCount: 0,
+    image: "/placeholder-course.png",
+  },
+  {
+    id: "c8",
+    title: "Architecture microservices avec Node.js",
+    description:
+      "Concevoir et implémenter une architecture microservices robuste avec Node.js, RabbitMQ et Docker.",
+    price: 1100,
+    duration: "4 jours",
+    category: "DEVELOPMENT",
+    status: "DRAFT",
+    trainerId: "t1",
+    trainerName: "Sophie Martin",
+    enrollmentCount: 0,
+    image: "/placeholder-course.png",
+  },
 ];
 
 export const organizations: Organization[] = [
@@ -192,12 +223,122 @@ export const organizations: Organization[] = [
   },
 ];
 
+const upcomingSessions: UpcomingSession[] = [
+  {
+    id: "s1",
+    courseTitle: "React Avancé — Patterns et Performance",
+    organizationName: "TechCorp Formation",
+    date: "2026-03-24",
+    startTime: "09:00",
+    endTime: "17:00",
+    location: "Paris",
+    type: "ONSITE",
+  },
+  {
+    id: "s2",
+    courseTitle: "React Avancé — Patterns et Performance",
+    organizationName: "FormaPro Institute",
+    date: "2026-03-28",
+    startTime: "09:30",
+    endTime: "17:30",
+    location: "En ligne",
+    type: "REMOTE",
+  },
+  {
+    id: "s3",
+    courseTitle: "Next.js 16 — Server Components et App Router",
+    organizationName: "Digital Academy",
+    date: "2026-04-02",
+    startTime: "09:00",
+    endTime: "17:00",
+    location: "Bordeaux",
+    type: "ONSITE",
+  },
+  {
+    id: "s4",
+    courseTitle: "Architecture microservices avec Node.js",
+    organizationName: "TechCorp Formation",
+    date: "2026-04-14",
+    startTime: "10:00",
+    endTime: "18:00",
+    location: "En ligne",
+    type: "REMOTE",
+  },
+];
+
+const recentActivity: ActivityItem[] = [
+  {
+    id: "a1",
+    type: "ENROLLMENT",
+    message: "3 nouveaux inscrits à React Avancé — Patterns et Performance",
+    timestamp: "2026-03-16T14:30:00",
+  },
+  {
+    id: "a2",
+    type: "REVIEW",
+    message: "Nouvel avis 5/5 de Pierre Durand sur React Avancé",
+    timestamp: "2026-03-16T10:15:00",
+  },
+  {
+    id: "a3",
+    type: "PAYMENT",
+    message: "Paiement de 2 670 \u20AC re\u00E7u de TechCorp Formation",
+    timestamp: "2026-03-15T16:45:00",
+  },
+  {
+    id: "a4",
+    type: "ENROLLMENT",
+    message: "1 nouvel inscrit \u00E0 React Avanc\u00E9 via la marketplace",
+    timestamp: "2026-03-15T09:20:00",
+  },
+  {
+    id: "a5",
+    type: "COURSE_PUBLISHED",
+    message: "Votre formation Next.js 16 est en attente de validation",
+    timestamp: "2026-03-14T11:00:00",
+  },
+  {
+    id: "a6",
+    type: "REVIEW",
+    message: "Nouvel avis 4/5 de Marie Lefèvre sur React Avancé",
+    timestamp: "2026-03-13T17:30:00",
+  },
+  {
+    id: "a7",
+    type: "PAYMENT",
+    message: "Paiement de 890 \u20AC re\u00E7u via la marketplace",
+    timestamp: "2026-03-12T14:00:00",
+  },
+];
+
+const monthlyRevenueData: MonthlyRevenuePoint[] = [
+  { month: "Jan", revenue: 3200, previousYear: 2800 },
+  { month: "Fév", revenue: 4100, previousYear: 3200 },
+  { month: "Mar", revenue: 3800, previousYear: 3500 },
+  { month: "Avr", revenue: 5200, previousYear: 4100 },
+  { month: "Mai", revenue: 4900, previousYear: 4300 },
+  { month: "Jun", revenue: 5100, previousYear: 4600 },
+  { month: "Jul", revenue: 4800, previousYear: 3900 },
+  { month: "Aoû", revenue: 5600, previousYear: 4200 },
+  { month: "Sep", revenue: 4200, previousYear: 3800 },
+  { month: "Oct", revenue: 3900, previousYear: 3600 },
+  { month: "Nov", revenue: 5100, previousYear: 4500 },
+  { month: "Déc", revenue: 4350, previousYear: 3800 },
+];
+
 export const trainerDashboardKPIs: TrainerDashboardKPIs = {
   totalRevenue: 47250,
   activeCourses: 4,
   totalStudents: 312,
   averageRating: 4.8,
   monthlyRevenue: [3200, 4100, 3800, 5200, 4900, 5100, 4800, 5600, 4200, 3900, 5100, 4350],
+  revenueTrend: 12.5,
+  studentsTrend: 8.2,
+  ratingTrend: 2.1,
+  coursesTrend: 0,
+  monthlyRevenueData,
+  upcomingSessions,
+  recentActivity,
 };
 
 export const organizationDashboardKPIs: OrganizationDashboardKPIs = {

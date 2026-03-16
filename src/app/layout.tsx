@@ -12,13 +12,13 @@ const poppins = Poppins({
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-heading",
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
   weight: ["600"],
 });
 
 const playfairDisplay = Playfair_Display({
-  variable: "--font-accent",
+  variable: "--font-playfair",
   subsets: ["latin"],
   weight: ["500"],
 });
@@ -37,10 +37,11 @@ export default async function RootLayout({
   const session = await auth();
 
   return (
-    <html lang="fr">
-      <body
-        className={`${poppins.variable} ${plusJakartaSans.variable} ${playfairDisplay.variable} antialiased`}
-      >
+    <html
+      lang="fr"
+      className={`${poppins.variable} ${plusJakartaSans.variable} ${playfairDisplay.variable}`}
+    >
+      <body className="antialiased">
         <SessionProvider session={session}>
           {children}
           <Toaster />

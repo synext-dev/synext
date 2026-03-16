@@ -24,13 +24,13 @@ export default auth((req) => {
     return Response.redirect(new URL("/dashboard", nextUrl));
   }
 
-  // Not logged in trying to access dashboard → redirect to login
-  if (isDashboard && !isLoggedIn) {
-    const callbackUrl = encodeURIComponent(pathname);
-    return Response.redirect(
-      new URL(`/login?callbackUrl=${callbackUrl}`, nextUrl)
-    );
-  }
+  // Phase 1: allow unauthenticated access to dashboard for demo
+  // if (isDashboard && !isLoggedIn) {
+  //   const callbackUrl = encodeURIComponent(pathname);
+  //   return Response.redirect(
+  //     new URL(`/login?callbackUrl=${callbackUrl}`, nextUrl)
+  //   );
+  // }
 
   // Role-based dashboard access
   if (isDashboard && isLoggedIn) {
