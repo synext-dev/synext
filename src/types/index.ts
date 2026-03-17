@@ -86,10 +86,18 @@ export interface Annonce {
   id: string;
   organizationName: string;
   organizationLogo: string;
+  orgType?: string;
   title: string;
   specialty: string;
   departement: string;
-  status: "candidated" | "saved";
+  domains?: string[];
+  level?: string;
+  interventionType?: string;
+  dateStart?: string;
+  dateEnd?: string;
+  durationHours?: number;
+  hourlyRate?: number;
+  status?: "candidated" | "saved";
 }
 
 export interface TrainerDashboardKPIs {
