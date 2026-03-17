@@ -9,9 +9,12 @@ export const NAV_LINKS = [
 
 export const DASHBOARD_NAV = {
   TRAINER: [
-    { label: "Tableau de bord", href: "/dashboard/trainer" },
-    { label: "Mes formations", href: "/dashboard/trainer/courses" },
-    { label: "Mon profil", href: "/dashboard/trainer/profile" },
+    { label: "Tableau Bord", href: "/dashboard/trainer" },
+    { label: "Annonce", href: "/dashboard/trainer/annonce" },
+    { label: "Disponibilité", href: "/dashboard/trainer/disponibilite" },
+    { label: "Accès", href: "/dashboard/trainer/acces" },
+    { label: "Profil", href: "/dashboard/trainer/profile" },
+    { label: "Support", href: "/dashboard/trainer/support" },
   ],
   ORGANIZATION: [
     { label: "Tableau de bord", href: "/dashboard/organization" },

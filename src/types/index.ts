@@ -75,7 +75,26 @@ export interface MonthlyRevenuePoint {
   previousYear: number;
 }
 
+export interface TrainerProfileStats {
+  profileViews: number;
+  profileClicks: number;
+  profileContacts: number;
+  totalCandidatures: number;
+}
+
+export interface Annonce {
+  id: string;
+  organizationName: string;
+  organizationLogo: string;
+  title: string;
+  specialty: string;
+  departement: string;
+  status: "candidated" | "saved";
+}
+
 export interface TrainerDashboardKPIs {
+  profileStats: TrainerProfileStats;
+  annonces: Annonce[];
   totalRevenue: number;
   activeCourses: number;
   totalStudents: number;

@@ -9,6 +9,8 @@ import type {
   MonthlyRevenuePoint,
   MonthlySpendingPoint,
   UpcomingTraining,
+  TrainerProfileStats,
+  Annonce,
 } from "@/types";
 
 export const trainers: Trainer[] = [
@@ -328,7 +330,55 @@ const monthlyRevenueData: MonthlyRevenuePoint[] = [
   { month: "Déc", revenue: 4350, previousYear: 3800 },
 ];
 
+const trainerProfileStats: TrainerProfileStats = {
+  profileViews: 800,
+  profileClicks: 325,
+  profileContacts: 38,
+  totalCandidatures: 55,
+};
+
+const trainerAnnonces: Annonce[] = [
+  {
+    id: "an1",
+    organizationName: "Digital X",
+    organizationLogo: "/placeholder-logo.png",
+    title: "Recherche Intervenant Intelligence Artificielle",
+    specialty: "Intelligence Artificielle",
+    departement: "69",
+    status: "candidated",
+  },
+  {
+    id: "an2",
+    organizationName: "Digital X",
+    organizationLogo: "/placeholder-logo.png",
+    title: "Recherche Intervenant Pilotage Commercial",
+    specialty: "No-code",
+    departement: "69",
+    status: "saved",
+  },
+  {
+    id: "an3",
+    organizationName: "FormaPro Institute",
+    organizationLogo: "/placeholder-logo.png",
+    title: "Formateur React & TypeScript confirmé",
+    specialty: "React",
+    departement: "75",
+    status: "candidated",
+  },
+  {
+    id: "an4",
+    organizationName: "TechCorp Formation",
+    organizationLogo: "/placeholder-logo.png",
+    title: "Expert Node.js pour formation interne",
+    specialty: "Node.js",
+    departement: "92",
+    status: "saved",
+  },
+];
+
 export const trainerDashboardKPIs: TrainerDashboardKPIs = {
+  profileStats: trainerProfileStats,
+  annonces: trainerAnnonces,
   totalRevenue: 47250,
   activeCourses: 4,
   totalStudents: 312,

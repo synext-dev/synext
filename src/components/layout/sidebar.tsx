@@ -2,15 +2,34 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, BookOpen, User, LogOut } from "lucide-react";
+import {
+  LayoutDashboard,
+  Megaphone,
+  CalendarDays,
+  Lock,
+  User,
+  HeadphonesIcon,
+  LayoutGrid,
+  Users,
+  BookOpen,
+  LogOut,
+} from "lucide-react";
 import { APP_NAME, DASHBOARD_NAV } from "@/lib/constants";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import type { UserRole } from "@/types";
 
-const TRAINER_ICONS = [LayoutDashboard, BookOpen, User] as const;
-const ORG_ICONS = [LayoutDashboard, User, BookOpen] as const;
+const TRAINER_ICONS = [
+  LayoutDashboard,
+  Megaphone,
+  CalendarDays,
+  Lock,
+  User,
+  HeadphonesIcon,
+] as const;
+
+const ORG_ICONS = [LayoutGrid, Users, BookOpen] as const;
 
 export function Sidebar({ role }: { role: UserRole }) {
   const pathname = usePathname();
@@ -28,14 +47,16 @@ export function Sidebar({ role }: { role: UserRole }) {
   };
 
   return (
-    <aside className="flex w-64 flex-col border-r bg-white">
-      <div className="p-6">
+    <aside className="flex w-56 flex-col border-r bg-white">
+      <div className="flex items-center justify-center px-4 py-6">
         <Link href="/" className="font-heading text-xl font-bold text-synext-navy">
           {APP_NAME}
         </Link>
       </div>
 
-      <nav className="flex-1 px-3 space-y-1">
+      <Separator />
+
+      <nav className="flex-1 px-3 py-3 space-y-0.5">
         {navItems.map((item, index) => {
           const Icon = icons[index];
           const active = isActive(item.href);
@@ -45,11 +66,11 @@ export function Sidebar({ role }: { role: UserRole }) {
               href={item.href}
               className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                 active
-                  ? "bg-synext-light text-synext-navy"
+                  ? "bg-synext-light text-synext-navy font-semibold"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
               }`}
             >
-              <Icon className="h-4 w-4" />
+              <Icon className="h-4 w-4 shrink-0" />
               {item.label}
             </Link>
           );
