@@ -3,12 +3,14 @@ import {
   organizationDashboardKPIs,
   availableAnnonces,
   trainerAvailability,
+  trainerAccountSettings,
 } from "@/lib/mock-data";
 import type {
   TrainerDashboardKPIs,
   OrganizationDashboardKPIs,
   Annonce,
   TrainerAvailability,
+  TrainerAccountSettings,
 } from "@/types";
 
 export async function getTrainerKPIs(): Promise<TrainerDashboardKPIs> {
@@ -25,4 +27,8 @@ export async function getAvailableAnnonces(): Promise<Annonce[]> {
 
 export async function getTrainerAvailability(): Promise<TrainerAvailability> {
   return trainerAvailability;
+}
+
+export async function getTrainerAccountSettings(): Promise<TrainerAccountSettings> {
+  return trainerAccountSettings;
 }

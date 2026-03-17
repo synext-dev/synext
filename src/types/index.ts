@@ -150,6 +150,34 @@ export interface OrganizationDashboardKPIs {
   recentActivity: ActivityItem[];
 }
 
+// --- Account Settings ---
+export interface ActiveSession {
+  id: string;
+  device: string;
+  ip: string;
+  location: string;
+  lastSeen: string;
+  current: boolean;
+}
+
+export interface NotificationSettings {
+  newAnnonce: boolean;
+  newMessage: boolean;
+  newCandidature: boolean;
+  frequency: "immediate" | "daily" | "weekly";
+}
+
+export interface TrainerAccountSettings {
+  profilePublic: boolean;
+  showHourlyRate: boolean;
+  contactRestriction: "all" | "verified_only";
+  twoFactorEnabled: boolean;
+  activeSessions: ActiveSession[];
+  notifications: NotificationSettings;
+  plan: "free" | "premium";
+  planRenewalDate?: string;
+}
+
 // --- Availability ---
 export type AvailabilityStatus = "available" | "unavailable" | "tentative" | "on_mission";
 

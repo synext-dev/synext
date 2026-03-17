@@ -12,6 +12,7 @@ import type {
   TrainerProfileStats,
   Annonce,
   TrainerAvailability,
+  TrainerAccountSettings,
 } from "@/types";
 
 export const trainers: Trainer[] = [
@@ -443,6 +444,38 @@ export const availableAnnonces: Annonce[] = [
     hourlyRate: 55,
   },
 ];
+
+export const trainerAccountSettings: TrainerAccountSettings = {
+  profilePublic: true,
+  showHourlyRate: false,
+  contactRestriction: "verified_only",
+  twoFactorEnabled: false,
+  activeSessions: [
+    {
+      id: "ses1",
+      device: "MacBook Pro — Chrome",
+      ip: "92.184.xx.xx",
+      location: "Paris, France",
+      lastSeen: "2026-03-17T20:00:00",
+      current: true,
+    },
+    {
+      id: "ses2",
+      device: "iPhone 15 — Safari",
+      ip: "92.184.xx.xx",
+      location: "Paris, France",
+      lastSeen: "2026-03-16T18:30:00",
+      current: false,
+    },
+  ],
+  notifications: {
+    newAnnonce: true,
+    newMessage: true,
+    newCandidature: true,
+    frequency: "daily",
+  },
+  plan: "free",
+};
 
 export const trainerAvailability: TrainerAvailability = {
   slots: [

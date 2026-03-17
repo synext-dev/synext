@@ -1,8 +1,7 @@
-export default function AccesPage() {
-  return (
-    <div className="space-y-6">
-      <h1 className="font-heading text-3xl font-bold text-synext-navy">Accès</h1>
-      <p className="text-muted-foreground">Cette section est en cours de développement.</p>
-    </div>
-  );
+import { getTrainerAccountSettings } from "@/lib/services/dashboard.service";
+import { AccesPanel } from "@/components/dashboard/acces-panel";
+
+export default async function AccesPage() {
+  const settings = await getTrainerAccountSettings();
+  return <AccesPanel settings={settings} />;
 }
