@@ -150,6 +150,37 @@ export interface OrganizationDashboardKPIs {
   recentActivity: ActivityItem[];
 }
 
+// --- Availability ---
+export type AvailabilityStatus = "available" | "unavailable" | "tentative" | "on_mission";
+
+export interface AvailabilitySlot {
+  id: string;
+  date: string;
+  status: AvailabilityStatus;
+  note?: string;
+}
+
+export interface WeeklyScheduleSlot {
+  id: string;
+  dayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+  startTime: string;
+  endTime: string;
+}
+
+export interface TrainerPreferences {
+  interventionTypes: ("ONSITE" | "REMOTE" | "HYBRID")[];
+  maxRadiusKm?: number;
+  minMissionDays?: number;
+  maxMissionDays?: number;
+  availableFrom?: string;
+}
+
+export interface TrainerAvailability {
+  slots: AvailabilitySlot[];
+  weeklySchedule: WeeklyScheduleSlot[];
+  preferences: TrainerPreferences;
+}
+
 // --- Auth User ---
 export interface AuthUser {
   id: string;

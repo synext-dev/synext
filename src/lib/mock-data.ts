@@ -11,6 +11,7 @@ import type {
   UpcomingTraining,
   TrainerProfileStats,
   Annonce,
+  TrainerAvailability,
 } from "@/types";
 
 export const trainers: Trainer[] = [
@@ -442,6 +443,33 @@ export const availableAnnonces: Annonce[] = [
     hourlyRate: 55,
   },
 ];
+
+export const trainerAvailability: TrainerAvailability = {
+  slots: [
+    { id: "sl1", date: "2026-03-18", status: "available" },
+    { id: "sl2", date: "2026-03-19", status: "available" },
+    { id: "sl3", date: "2026-03-20", status: "on_mission" },
+    { id: "sl4", date: "2026-03-21", status: "on_mission" },
+    { id: "sl5", date: "2026-03-25", status: "unavailable", note: "Congés" },
+    { id: "sl6", date: "2026-03-26", status: "unavailable", note: "Congés" },
+    { id: "sl7", date: "2026-04-02", status: "tentative", note: "Sous réserve d'un autre engagement" },
+    { id: "sl8", date: "2026-04-08", status: "available" },
+    { id: "sl9", date: "2026-04-09", status: "available" },
+    { id: "sl10", date: "2026-04-14", status: "on_mission" },
+  ],
+  weeklySchedule: [
+    { id: "ws1", dayOfWeek: 1, startTime: "09:00", endTime: "17:00" },
+    { id: "ws2", dayOfWeek: 3, startTime: "09:00", endTime: "17:00" },
+    { id: "ws3", dayOfWeek: 5, startTime: "09:00", endTime: "12:00" },
+  ],
+  preferences: {
+    interventionTypes: ["ONSITE", "REMOTE"],
+    maxRadiusKm: 100,
+    minMissionDays: 2,
+    maxMissionDays: 10,
+    availableFrom: "2026-03-18",
+  },
+};
 
 export const trainerDashboardKPIs: TrainerDashboardKPIs = {
   profileStats: trainerProfileStats,
